@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django_paperboy.views import home_page, home_page_redirect, paperboy
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('home/', home_page, name='home'),
+    path('paperboy/<int:id>', paperboy, name='paperboy'),
+    path('', home_page_redirect),
 ]

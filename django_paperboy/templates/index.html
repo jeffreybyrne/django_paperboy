@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for boy in paperboys %}
+  <h2 class='paperboy-header'>{{ boy.name }}</h2>
+  <p>{{ boy.report }}</p>
+{% endfor %}
+{% endblock %}

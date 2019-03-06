@@ -8,6 +8,8 @@
     <header>
       <h1>Paperboys</h1>
     </header>
+    <p>Total papers delivered: <span class='delivered-total'>{{ total_delivered }}</span></p>
+    <p>Total payment earned: <span class='earnings-total'>${{ total_earned }}</span></p>
     {% block content %}
     {% endblock %}
   </body>

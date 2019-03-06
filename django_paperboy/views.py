@@ -6,7 +6,9 @@ from django_paperboy.models import Paperboy
 
 def home_page(request):
     paperboys = Paperboy.objects.all()
-    context = {'paperboys': paperboys}
+    total_earned = Paperboy.total_earned()
+    total_delivered = Paperboy.total_delivered()
+    context = {'paperboys': paperboys, 'total_earned': total_earned, 'total_delivered': total_delivered}
     response = render(request, 'index.html', context)
     return HttpResponse(response)
 

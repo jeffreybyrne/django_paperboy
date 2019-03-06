@@ -1,5 +1,5 @@
 # import ipdb
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django_paperboy.models import Paperboy
 

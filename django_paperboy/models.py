@@ -16,6 +16,22 @@ class Paperboy(models.Model):
     def report(self):
         return "Look at me! I'm {} and I've delivered {} papers so far. They've paid me ${:.2f} for this, can you believe it?!".format(self.name, self.experience, self.earnings)
 
+    @classmethod
+    def total_delivered(cls):
+        total = 0
+        paperboys = cls.objects.all()
+        for boy in paperboys:
+            total += boy.experience
+        return total
+
+    @classmethod
+    def total_earned(cls):
+        total = 0
+        paperboys = cls.objects.all()
+        for boy in paperboys:
+            total += boy.earnings
+        return total
+
     def deliver(self, start_address, end_address):
         start = min(start_address, end_address)
         end = max(start_address, end_address)

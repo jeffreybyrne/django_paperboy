@@ -48,3 +48,36 @@ body {
   font-weight: bold;
   border-bottom: 3px solid #007aff;
 }
+
+
+@media (max-width: 804px) {
+  .individual-boy {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 30px 3fr 30px;
+  }
+
+  .start-address {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+  }
+
+  .address-text {
+    margin: 0;
+  }
+
+  .end-address {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+  }
+
+  .address-button {
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+  }
+
+}

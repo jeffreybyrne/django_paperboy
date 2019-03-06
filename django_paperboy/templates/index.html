@@ -20,16 +20,18 @@
     <p class='paperboy-report'>{{ boy.report }}</p>
     <form class="" action="{% url 'deliver' %}" method="post">
       {% csrf_token %}
-      <input type="hidden" name="boy_id" value="{{ boy.pk }}">
-      <label for="start-address">
-        <p class="address-text">Starting house number</p>
-        <input type="number" id="start-address" name="start-address" value="">
-      </label>
-      <label for="end-address">
-        <p class="address-text">Final house number</p>
-        <input type="number" id="end-address" name="end-address" value="">
-      </label>
-      <button type="submit" name="button">Deliver!</button>
+      <section class="individual-boy">
+        <input type="hidden" name="boy_id" value="{{ boy.pk }}">
+          <label for="start-address" class='start-address'>
+            <p class="address-text">Starting house number</p>
+            <input class='address-input' type="number" id="start-address" name="start-address" value="">
+          </label>
+          <label for="end-address" class='end-address'>
+            <p class="address-text">Final house number</p>
+            <input class='address-input' type="number" id="end-address" name="end-address" value="">
+          </label>
+          <button class='address-button' type="submit" name="button">Deliver!</button>
+      </section>
     </form>
     {% endfor %}
   </body>

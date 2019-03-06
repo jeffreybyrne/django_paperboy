@@ -11,11 +11,13 @@
     <header>
       <h1 class='paperboy-main-header'>Paperboys</h1>
     </header>
-    <p>Total papers delivered: <span class='delivered-total'>{{ total_delivered }}</span></p>
-    <p>Total payment earned: <span class='earnings-total'>${{ total_earned }}</span></p>
+    <section class='delivery-summary'>
+      <p>Total papers delivered: <span class='summary-total'>{{ total_delivered }}</span></p>
+      <p>Total payment earned: <span class='summary-total'>${{ total_earned }}</span></p>
+    </section>
     {% for boy in paperboys %}
     <h2 class='paperboy-header'>{{ boy.name }}</h2>
-    <p>{{ boy.report }}</p>
+    <p class='paperboy-report'>{{ boy.report }}</p>
     <form class="" action="{% url 'deliver' %}" method="post">
       {% csrf_token %}
       <input type="hidden" name="boy_id" value="{{ boy.pk }}">

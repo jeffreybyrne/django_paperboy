@@ -7,7 +7,44 @@
   background-color: #007aff;
   color: #E6E673;
   margin-top: 0;
+  margin-bottom: 0;
   font-weight: normal;
   padding: 20px 10px;
   border-bottom: 3px solid #E6E673;
+}
+
+.delivery-summary {
+  margin-top: 0;
+  padding-top: 5px;
+}
+
+body {
+  background-color: #EDF2F9;
+}
+
+.paperboy-header {
+  margin-left: 30px;
+  margin-right: 30px;
+  border-bottom: 2px solid black;
+}
+
+.paperboy-report {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.address-text {
+  display: inline;
+  font-weight: bold;
+  margin: auto 30px;
+}
+
+.delivery-summary {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.summary-total {
+  font-weight: bold;
+  border-bottom: 3px solid #007aff;
 }

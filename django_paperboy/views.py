@@ -1,6 +1,6 @@
 # import ipdb
-from django.http import HttpResponse
-from django.shortcuts import render, redirect, get_object_or_404
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404
 from django_paperboy.models import Paperboy
 
 
@@ -21,7 +21,7 @@ def paperboy(request, id):
 
 
 def home_page_redirect(request):
-    return redirect(home_page)
+    return HttpResponseRedirect('/home/')
 
 
 def deliver(request):
@@ -31,4 +31,4 @@ def deliver(request):
     end_address = int(request.POST['end-address'])
     paperboy = Paperboy.objects.get(pk=paperboy_num)
     paperboy.deliver(start_address, end_address)
-    return redirect(home_page)
+    return HttpResponseRedirect('/home')

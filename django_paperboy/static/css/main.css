@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.paperboy-main-header {
+  background-color: #007aff;
+  color: #E6E673;
+  margin-top: 0;
+  font-weight: normal;
+  padding: 20px 10px;
+  border-bottom: 3px solid #E6E673;
+}

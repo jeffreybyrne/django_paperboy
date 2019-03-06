@@ -1,12 +1,15 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Paperboys!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
   </head>
   <body>
     <header>
-      <h1>Paperboys</h1>
+      <h1 class='paperboy-main-header'>Paperboys</h1>
     </header>
     <p>Total papers delivered: <span class='delivered-total'>{{ total_delivered }}</span></p>
     <p>Total payment earned: <span class='earnings-total'>${{ total_earned }}</span></p>

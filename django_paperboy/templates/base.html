@@ -1,0 +1,17 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Paperboys!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  </head>
+  <body>
+    <header>
+      <h1 class='paperboy-main-header'><a href="{% url 'home' %}">Paperboys</a></h1>
+    </header>
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

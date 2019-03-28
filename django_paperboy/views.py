@@ -15,7 +15,7 @@ def home_page(request):
 
 def paperboy(request, id):
     paperboy = get_object_or_404(Paperboy, pk=id)
-    context = {'paperboy': paperboy}
+    context = {'boy': paperboy}
     response = render(request, 'paperboy.html', context)
     return HttpResponse(response)
 

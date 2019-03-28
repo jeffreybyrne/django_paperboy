@@ -1,22 +1,11 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Paperboys!</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-  </head>
-  <body>
-    <header>
-      <h1 class='paperboy-main-header'>Paperboys</h1>
-    </header>
+{% extends 'base.html' %}
+{% block content %}
     <section class='delivery-summary'>
       <p>Total papers delivered: <span class='summary-total'>{{ total_delivered }}</span></p>
       <p>Total payment earned: <span class='summary-total'>${{ total_earned }}</span></p>
     </section>
     {% for boy in paperboys %}
-    <h2 class='paperboy-header'>{{ boy.name }}</h2>
+    <h2 class='paperboy-header'><a href="{% url 'paperboy' id=boy.pk %}">{{ boy.name }}</a></h2>
     <p class='paperboy-report'>{{ boy.report }}</p>
     <form class="" action="{% url 'deliver' %}" method="post">
       {% csrf_token %}
@@ -34,5 +23,4 @@
       </section>
     </form>
     {% endfor %}
-  </body>
-</html>
+{% endblock %}
